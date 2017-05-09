@@ -1,0 +1,30 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# This model initially had no columns defined.  If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+semester_one:
+  sem_name: Fall'16
+  status: Due
+  maximum_credit: 5.00
+  users: user_one, user_two
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+# column: value
+#
+semester_two:
+  sem_name: Summer'16
+  status: Current
+  maximum_credit: 5.00
+  users:
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+
+semester_three:
+  sem_name: Summer'15
+  status: Done
+  maximum_credit: 5.00
+  users:
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>

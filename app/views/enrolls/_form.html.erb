@@ -1,0 +1,52 @@
+<%= form_for(@enroll) do |f| %>
+  <% if @enroll.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@enroll.errors.count, "error") %> prohibited this enroll from being saved:</h2>
+
+      <ul>
+      <% @enroll.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <div class="form-inline col-md-6 col-md-offset-4">
+
+      <label>
+        Semester:
+        <%= f.object.semester.sem_name %>
+        <%= f.hidden_field :semester_id %>
+      </label>
+
+      <label>
+        Student:
+        <%= f.object.user.first_name %>
+        <%= f.hidden_field :user_id %>
+      </label>
+
+      <label>
+        Maximum Credit: <%= @maximum_credit %>
+      </label>
+
+      <label>
+        <% f.object.semester.status %>
+        <%= f.hidden_field :status %>
+      </label>
+    </div>
+
+    <div class="col-md-6 col-md-offset-4">
+
+      <%= collection_check_boxes(:enroll, :course_ids, @courses, :id, :course_title_with_credit) do |c| %>
+          <div class="collection-check-box">
+            <%= c.check_box(:"data-credit" => c.object.credit) %>
+            <%= c.label%>
+          </div>
+      <% end %>
+
+    </div>
+  <div class="col-md-4 col-md-offset-4">
+    <%= f.submit %>
+  </div>
+
+<% end %>

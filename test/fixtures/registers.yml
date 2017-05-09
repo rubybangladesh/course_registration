@@ -1,0 +1,18 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+register_one:
+  enroll: enroll_one
+  course: course_one
+  created_at: <%= Time.now %>
+
+
+register_two:
+  enroll: enroll_one
+  course: course_two
+  created_at: <%= Time.now %>
+
+
+register_three:
+  enroll: enroll_one
+  course: course_three
+  created_at: <%= Time.now %>

@@ -1,0 +1,39 @@
+<div class="login">
+  <div class="container">
+    <div class="form">
+
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+          <div class="col-md-4 col-md-offset-4">
+
+            <h1>Log in</h1>
+
+            <form>
+              <fieldset class="form-group">
+                <%= f.label :email %>
+                <%= f.email_field :email, :placeholder => "Email", class: 'form-control' %>
+              </fieldset>
+
+              <fieldset class="form-group">
+                <%= f.label :password %>
+                <%= f.password_field :password, :placeholder => "Password", class: 'form-control' %>
+              </fieldset>
+
+              <%= f.submit "Log in", class: "btn btn-primary" %>
+
+            </form>
+
+            <% if devise_mapping.rememberable? -%>
+                <div class="field">
+                  <%= f.check_box :remember_me %>
+                  <%= f.label :remember_me %>
+                </div>
+            <% end -%>
+
+            <%= render "devise/shared/links" %>
+
+          </div>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,34 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# This model initially had no columns defined.  If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+course_one:
+  course_no: CSE 3101
+  course_title: Theory of Computation
+  credit: 2.00
+  semester: Fall'16
+  enrolls: enroll_one, enroll_two
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+# column: value
+#
+course_two:
+  course_no: CSE 3107
+  course_title: Database
+  credit: 3.00
+  semester: Fall'16
+  enrolls: enroll_one, enroll_two
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+
+course_three:
+  course_no: CSE 3108
+  course_title: Database Lab
+  credit: 3.00
+  semester: Fall'16
+  enrolls: enroll_one
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+#  column: value

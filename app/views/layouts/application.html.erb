@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Online Student Registration</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body class="<%= controller.controller_name %>">
+
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Online Registration</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><%= link_to "Registration", new_enroll_path%></li>
+      <li><%= link_to "Semester", semesters_path%></li>
+      <li><%= link_to "Course", courses_path%></li>
+      <!--<% if user_signed_in? %>-->
+          <!--<li><%= link_to "Edit Registration", enrolls_edit_path%></li>-->
+      <!--<% end %>-->
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <% if user_signed_in? %>
+          <li><%= link_to "Edit profile", edit_user_registration_path %></li>
+          <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+      <% else %>
+          <li><%= link_to "Sign up", new_user_registration_path %></li>
+          <li><%= link_to "Login", new_user_session_path %></li>
+      <% end %>
+    </ul>
+
+
+  </div>
+</nav>
+
+<%= yield %>
+
+</body>
+</html>

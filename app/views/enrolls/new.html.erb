@@ -1,0 +1,12 @@
+<h1  class="new text-center">New Enroll <%= current_user.roll %></h1>
+
+<div class="col-md-6 col-md-offset-4 alert alert-danger" id="credit-form" style="display:none;">
+  <h3>Total credit exceeded!!</h3>
+</div>
+
+<%= render 'form' %>
+
+<div class="col-md-6 col-md-offset-4" id="display-credit">
+</div>
+
+<%= link_to 'Back', enrolls_path, class: "btn btn-primary"  %>
